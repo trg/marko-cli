@@ -27,7 +27,7 @@
     ]
   },
   "scripts": {
-    "build": "for pkg in ./packages/*; do (cd $pkg && rm -rf ./dist && babel ./src --out-dir ./dist); done",
+    "build": "for pkg in ./packages/*; do (cd $pkg && rm -rf ./dist && node ../../node_modules/babel-cli/bin/babel.js ./src --out-dir ./dist --copy-files); done",
     "clean": "lerna clean && rm -rf ./packages/*/dist",
     "format": "prettier \"packages/**/*.{json,css,less,md,js}\" \"*.{json,md,js}\" --write",
     "lint": "eslint -f visualstudio packages/",
